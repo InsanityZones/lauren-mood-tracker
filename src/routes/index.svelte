@@ -1,5 +1,6 @@
 <script>
     import Greeting from "$lib/Greeting.svelte";
+    import Entry from "$lib/Entry.svelte";
 </script>
 
 <Greeting />
