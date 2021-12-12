@@ -7,28 +7,28 @@
 
     // code that runs only in the browser
     if (browser) {
-   	    $session = supabase.auth.session(); // set session
-   	    redirect();
+   	 $session = supabase.auth.session(); // set session
+   	 redirect();
 
-   	    supabase.auth.onAuthStateChange((userSession) => {
-   		    $session = userSession; // set session
-   		    redirect();
-   	    });
+   	 supabase.auth.onAuthStateChange((event, userSession) => {
+   		 $session = userSession; // set session
+   		 redirect();
+   	 });
     }
 
     function redirect() {
-   	    //login redirect
-   	    if ($session && $page.path === '/login') {
-   		    goto('/');
-   	    }
+   	 //login redirect
+   	 if ($session && $page.path === '/login') {
+   		 goto('/');
+   	 }
 
    	 //logout redirect
-   	    if (!$session && $page.path === '/') {
-   		    goto('/login');
-   	    }
+   	 if (!$session && $page.path === '/') {
+   		 goto('/login');
+   	 }
     }
-
 </script>
 
 <Navbar />
+
 <slot />

@@ -7,7 +7,7 @@
     let day = 1;
     let month = 1;
     let year = 2021;
-    let mood = Okay
+    let mood = "Okay"
     let comment = 'This is a comment'
     // Insert entry
     async function saveEntry() {
